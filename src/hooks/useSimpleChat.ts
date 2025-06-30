@@ -233,4 +233,4 @@ export const useSimpleChat = () => {
 		connectionState,
 		reconnect,
 	}
-}
+} 
