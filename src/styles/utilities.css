@@ -1,0 +1,185 @@
+
+/* Service navigation styles */
+[data-state="active"] .service-indicator {
+  width: 30px;
+  background: linear-gradient(90deg, #FF7A00, #FF36A3);
+}
+
+.service-indicator {
+  height: 4px;
+  width: 15px;
+  background-color: #555555;
+  transition: all 0.3s ease;
+}
+
+/* Optimized tabs animation */
+.services-tab-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  will-change: opacity, visibility;
+}
+
+.services-tab-content.tab-visible {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  pointer-events: auto;
+}
+
+[data-state="active"].services-tab-content {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  pointer-events: auto;
+  animation: tab-fade-in 0.3s ease forwards;
+}
+
+/* Optimized fade transition */
+.fade-transition {
+  will-change: opacity, transform;
+}
+
+/* Tab state styles - optimized */
+[data-state="active"] {
+  transition: all 0.2s ease;
+}
+
+[data-state="inactive"] {
+  opacity: 0.7;
+}
+
+/* Improved mobile carousel styles */
+@media (max-width: 768px) {
+  .carousel-prev, .carousel-next {
+    position: static;
+    transform: none;
+  }
+  
+  /* Better mobile carousel spacing */
+  .embla__container {
+    backface-visibility: hidden;
+    touch-action: pan-y pinch-zoom;
+  }
+  
+  .embla__slide {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+}
+
+/* Arrow navigation styles - unified button design */
+.custom-carousel-button {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(0);
+  transition: all 0.25s ease;
+  opacity: 0.85;
+  border: none !important;
+  background: linear-gradient(45deg, #FF7A00, #FF36A3);
+  color: white !important;
+  border-radius: 9999px !important;
+}
+
+.custom-carousel-button:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
+  opacity: 1;
+  background: linear-gradient(45deg, #FF36A3, #9747FF);
+}
+
+.custom-carousel-button:active {
+  transform: translateY(-1px);
+  background: linear-gradient(45deg, #9747FF, #0832A2);
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  .floating-element {
+    animation: none;
+  }
+  
+  /* Optimize scroll behavior */
+  .container {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better mobile button sizing */
+  .contact-button {
+    min-height: 44px; /* iOS recommended touch target */
+    touch-action: manipulation;
+    border-radius: 9999px !important;
+  }
+  
+  /* Prevent horizontal scroll issues */
+  .overflow-hidden {
+    overflow-x: hidden !important;
+  }
+  
+  /* Mobile carousel improvements */
+  .embla__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Chat optimization */
+.chat-message {
+  contain: layout style paint;
+}
+
+/* Performance improvements */
+.contact-button {
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
+}
+
+.floating-element {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Prevent layout shifts */
+.navbar-logo {
+  aspect-ratio: auto;
+}
+
+/* Smooth scrolling optimization */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Unified button styling across the entire site */
+button:not(.no-style), 
+.btn,
+input[type="submit"],
+input[type="button"] {
+  border-radius: 9999px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Ensure outline buttons also have rounded corners */
+.btn-outline,
+button[variant="outline"] {
+  border-radius: 9999px !important;
+}

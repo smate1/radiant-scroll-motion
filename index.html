@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>connexi.ai | AI-рішення для бізнесу в Україні</title>
+  <meta name="description"
+    content="Впровадження штучного інтелекту в бізнес-процеси. Оптимізація та автоматизація за допомогою AI-технологій." />
+  <meta name="author" content="connexi.ai" />
+  <link rel="icon" href="/lovable-uploads/dbf89901-caf3-4069-a5bc-0ac9cbade5ff.png" type="image/png">
+
+  <meta property="og:title" content="connexi.ai | AI-рішення для бізнесу" />
+  <meta property="og:description"
+    content="Впровадження штучного інтелекту в бізнес-процеси. Оптимізація та автоматизація за допомогою AI-технологій." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/lovable-uploads/dbf89901-caf3-4069-a5bc-0ac9cbade5ff.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@connexi_ai" />
+  <meta name="twitter:image" content="/lovable-uploads/dbf89901-caf3-4069-a5bc-0ac9cbade5ff.png" />
+
+  <!-- Improve text rendering and iOS compatibility -->
+  <style>
+    html,
+    body {
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      /* iOS safe area support */
+      --sat: env(safe-area-inset-top);
+      --sar: env(safe-area-inset-right);
+      --sab: env(safe-area-inset-bottom);
+      --sal: env(safe-area-inset-left);
+    }
+
+    /* iOS specific fixes */
+    @supports (-webkit-touch-callout: none) {
+
+      /* This is iOS Safari */
+      body {
+        -webkit-touch-callout: none;
+        -webkit-text-size-adjust: 100%;
+        -webkit-user-select: none;
+        overflow: hidden;
+      }
+
+      /* Force proper keyboard handling */
+      input,
+      textarea {
+        -webkit-user-select: text !important;
+        user-select: text !important;
+        -webkit-touch-callout: default !important;
+        outline: none;
+      }
+
+      /* Fix for viewport height on iOS */
+      .ios-safe-height {
+        height: 100vh;
+        height: -webkit-fill-available;
+      }
+
+      /* Chat container iOS fixes */
+      .chat-container {
+        height: 100vh;
+        height: -webkit-fill-available;
+        overflow: hidden;
+      }
+
+      /* Input safe area */
+      .chat-input-safe-area {
+        height: env(safe-area-inset-bottom);
+        min-height: 34px;
+        /* Default iOS safe area bottom */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+
+project_id = "mdlyglpbdqvgwnayumhh"
+
+[functions.chat-handler]
+verify_jwt = false
+
+[functions.receive-n8n-response]
+verify_jwt = false

@@ -1,0 +1,206 @@
+@import './variables.css';
+@import './animations.css';
+@import './components.css';
+@import './utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden !important;
+      width: 100% !important;
+      max-width: 100vw !important;
+    }
+
+    * {
+      max-width: 100vw !important;
+      box-sizing: border-box !important;
+    }
+
+    .container {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+    }
+  }
+
+  /* iOS Safari specific fixes */
+  @supports (-webkit-touch-callout: none) {
+    html, body {
+      -webkit-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+      /* Prevent pull-to-refresh */
+      overscroll-behavior: none;
+      overflow: hidden;
+    }
+
+    /* iOS safe area variables */
+    :root {
+      --sat: env(safe-area-inset-top);
+      --sar: env(safe-area-inset-right);
+      --sab: env(safe-area-inset-bottom);
+      --sal: env(safe-area-inset-left);
+    }
+
+    /* Fix iOS viewport height issues */
+    .ios-safe-height {
+      height: 100vh;
+      height: -webkit-fill-available;
+    }
+
+    /* Chat container specific iOS fixes */
+    .chat-container {
+      height: 100vh !important;
+      height: -webkit-fill-available !important;
+      overflow: hidden;
+      position: fixed;
+      /* Fix for iOS Safari bottom bar */
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* Input area safe spacing */
+    .chat-input-container {
+      padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+      background: rgb(17 24 39);
+      position: relative;
+      z-index: 10;
+    }
+
+    .chat-input-safe-area {
+      height: env(safe-area-inset-bottom);
+      min-height: 34px;
+    }
+
+    /* Fix iOS input field issues */
+    input, textarea {
+      -webkit-user-select: text !important;
+      user-select: text !important;
+      -webkit-touch-callout: default !important;
+      -webkit-appearance: none !important;
+      appearance: none !important;
+      border-radius: 0;
+      /* Prevent zoom on focus */
+      font-size: 16px !important;
+      outline: none;
+      /* Fix transform issues on focus */
+      transform: none !important;
+      -webkit-transform: none !important;
+    }
+
+    /* Chat input specific iOS fixes */
+    .chat-container textarea {
+      background: rgba(31, 41, 55, 1) !important;
+      color: white !important;
+      border: 1px solid #4B5563 !important;
+      padding: 12px 16px !important;
+      border-radius: 8px !important;
+      font-size: 16px !important;
+      line-height: 1.5 !important;
+      /* Support for Cyrillic characters */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+      unicode-bidi: plaintext;
+      direction: ltr;
+    }
+
+    /* Fix iOS keyboard issues */
+    .chat-container textarea:focus {
+      transform: none !important;
+      -webkit-transform: none !important;
+      outline: none !important;
+      border-color: #FB923C !important;
+    }
+
+    /* Prevent iOS bouncing */
+    .chat-message-list {
+      -webkit-overflow-scrolling: touch;
+      overflow-scrolling: touch;
+    }
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.orange-highlight {
+  background: linear-gradient(90deg, #FF7A00, #FF36A3);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.connexi-gradient-text {
+  background: linear-gradient(90deg, #FF7A00, #FF36A3, #9747FF, #0832A2);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Reveal animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating animations */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(15px, -20px) rotate(5deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-10px, -30px) rotate(-3deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-15px, 10px) rotate(2deg);
+    opacity: 0.7;
+  }
+}

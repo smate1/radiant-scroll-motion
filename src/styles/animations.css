@@ -1,0 +1,255 @@
+
+/* Animation Keyframes - Optimized for performance */
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Border gradient animation */
+@keyframes border-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Optimized tab animation */
+@keyframes tab-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(5px); /* Reduced movement for faster rendering */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero floating elements animation */
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-15px, -50px) scale(0.9);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translate(-30px, -20px) scale(1.05);
+    opacity: 0.4;
+  }
+}
+
+/* Geometric diamond animations */
+@keyframes geometricFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translate(15px, -25px) scale(1.1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-10px, -40px) scale(0.95);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-20px, -15px) scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+@keyframes geometricRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced dynamic background animations */
+@keyframes morphBlob {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: translate(10px, -10px) rotate(90deg);
+  }
+  50% {
+    border-radius: 50% 40% 60% 30% / 70% 50% 40% 60%;
+    transform: translate(-5px, 10px) rotate(180deg);
+  }
+  75% {
+    border-radius: 40% 70% 30% 60% / 40% 70% 60% 50%;
+    transform: translate(5px, -5px) rotate(270deg);
+  }
+}
+
+@keyframes waveFloat {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 0.4;
+  }
+  33% {
+    transform: translateY(-15px) rotateX(120deg);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translateY(10px) rotateX(240deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255,122,0,0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255,54,163,0.2);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes driftSlow {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -20px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-20px, -40px) rotate(-3deg);
+  }
+  75% {
+    transform: translate(-10px, 20px) rotate(2deg);
+  }
+}
+
+/* Scroll Reveal Animations - Performance optimized */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px); /* Reduced for better performance */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Float Animation - Performance optimized */
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 110, 30, 0.1) 0%, rgba(248, 110, 30, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Geometric diamond elements */
+.hero-geometric-diamond {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 1;
+}
+
+/* Text shine effect - Performance optimized */
+.animate-shine {
+  background: linear-gradient(
+    to right,
+    #F86E1E 20%,
+    #ffffff 40%,
+    #ffffff 60%,
+    #F86E1E 80%
+  );
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+/* Fade transition animations - Performance optimized */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(5px); /* Reduced for better performance */
+  will-change: opacity, transform;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms; /* Faster transitions */
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: opacity, transform;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-5px); /* Reduced for better performance */
+  transition: opacity 300ms, transform 300ms; /* Faster transitions */
+}

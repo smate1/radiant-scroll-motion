@@ -1,0 +1,741 @@
+/* Hero Section Styles */
+.hero-gradient {
+  background: linear-gradient(135deg, #0832A2 0%, #9747FF 50%, #FF36A3 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+.animated-gradient {
+  background: linear-gradient(90deg, rgba(250,250,250,1) 0%, rgba(245,245,245,0.8) 50%, rgba(250,250,250,1) 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+.animated-bg-light {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom left, rgba(8,50,162,0.05) 0%, transparent 70%),
+              radial-gradient(ellipse at top right, rgba(151,71,255,0.05) 0%, transparent 70%),
+              #ffffff;
+}
+
+.animated-bg-light::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,54,163,0.03) 0%, rgba(250,250,250,0) 50%);
+  animation: rotate 30s linear infinite;
+  z-index: 0;
+}
+
+.animated-bg-light::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,122,0,0.03) 0%, rgba(250,250,250,0) 70%);
+  animation: rotate 20s linear infinite reverse;
+  z-index: 0;
+}
+
+.animated-bg {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom left, rgba(8,50,162,0.2) 0%, transparent 70%),
+              radial-gradient(ellipse at top right, rgba(151,71,255,0.2) 0%, transparent 70%),
+              #1a1a1a;
+}
+
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,54,163,0.1) 0%, rgba(30,30,30,0) 50%);
+  animation: rotate 30s linear infinite;
+  z-index: 0;
+}
+
+.animated-bg::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,122,0,0.1) 0%, rgba(30,30,30,0) 70%);
+  animation: rotate 20s linear infinite reverse;
+  z-index: 0;
+}
+
+/* Card Styles */
+.card-hover {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-glow {
+  animation: pulse 6s ease-in-out infinite;
+}
+
+/* Button Styles - Unified design with rounded corners */
+.contact-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #FF7A00, #FF36A3) !important;
+  border: none !important;
+  color: white !important;
+  border-radius: 9999px !important; /* Full rounded corners */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.contact-button:hover {
+  transform: translateY(-2px) translateZ(0);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(45deg, #FF36A3, #9747FF) !important;
+}
+
+.contact-button:active {
+  background: linear-gradient(45deg, #9747FF, #0832A2) !important;
+  transform: translateY(-1px) translateZ(0);
+}
+
+.contact-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  border-radius: 9999px;
+}
+
+.contact-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.pulse-on-hover:hover {
+  animation: pulse 1s infinite;
+}
+
+/* Unified button styles for all buttons */
+button, .btn {
+  border-radius: 9999px !important;
+  transition: all 0.3s ease;
+}
+
+/* Carousel Styles */
+.custom-carousel-button {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  border-radius: 9999px !important;
+}
+
+.custom-carousel-button:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* Auto-scrolling carousel - optimized for mobile */
+.auto-scrolling-content {
+  animation: scroll-smooth 25s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scroll-smooth {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-250px * 3));
+  }
+}
+
+/* Global overflow prevention */
+.hero-section,
+.about-section,
+.services-section,
+.cases-section,
+.contacts-section {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+.chat-message-list{
+  padding-bottom: 30px;
+}
+/* Mobile-specific section fixes */
+@media (max-width: 768px) {
+  .hero-section,
+  .about-section,
+  .services-section,
+  .cases-section,
+  .contacts-section {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Fix for iframe and video elements on mobile */
+  iframe {
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  /* Ensure grid and flex containers don't overflow */
+  .grid, .flex {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* Container padding adjustments for mobile */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Mobile carousel optimization */
+  .auto-scrolling-content {
+    animation: scroll-smooth-mobile 20s linear infinite;
+  }
+
+  @keyframes scroll-smooth-mobile {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-180px * 3));
+    }
+  }
+
+  /* Mobile button improvements */
+  .contact-button {
+    font-size: 0.875rem !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 9999px !important;
+  }
+
+  /* Mobile text improvements */
+  .case-card-white .text-xs {
+    font-size: 0.625rem !important;
+  }
+
+  /* Performance optimizations for mobile */
+  .floating-element {
+    display: none;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Mobile Chat Scroll Optimizations */
+  .chat-message-list {
+    /* Optimize scrolling performance */
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-y: contain !important;
+    touch-action: pan-y !important;
+    will-change: scroll-position !important;
+    /* Prevent momentum scrolling conflicts */
+    overflow-anchor: none !important;
+    /* Smooth scrolling for iOS Safari */
+    scroll-behavior: auto !important;
+    cursor: text;
+    /* Allow clicks to pass through to focus input */
+    min-height: 0px;
+    /* Add bottom padding to prevent overlap with input */
+    padding-bottom: 50px;
+  }
+
+  /* Chat container mobile fixes */
+  .chat-container {
+    /* Fix viewport height issues */
+    height: 100vh !important;
+    height: 100dvh !important; /* Dynamic viewport height for newer browsers */
+    /* Prevent keyboard displacement issues */
+    position: fixed !important;
+    overscroll-behavior: contain !important;
+    /* Better mobile scroll handling */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* Chat input mobile optimizations */
+  .chat-input-container {
+    /* Prevent keyboard zoom on iOS */
+    font-size: 16px !important;
+    /* Fix virtual keyboard issues */
+    position: relative !important;
+    transform: translateZ(0) !important;
+  }
+
+  .chat-input-container textarea {
+    /* Better touch targets */
+    min-height: 48px;
+    padding: 12px 16px;
+    font-size: 16px; /* Prevent zoom on iOS */
+    /* Improved mobile focus */
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: 8px;
+  }
+
+  .chat-input-container textarea:focus {
+    /* Better focus indication on mobile */
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  /* Ensure send button is easily tappable */
+  .chat-send-button {
+    min-width: 48px;
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+
+  /* Prevent scroll issues during input focus */
+  /* Already handled above in .chat-container */
+
+  /* Mobile safe area handling */
+  .chat-input-safe-area {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Mobile scroll performance boost */
+  .mobile-scroll-optimized {
+    -webkit-transform: translateZ(0) !important;
+    -moz-transform: translateZ(0) !important;
+    -ms-transform: translateZ(0) !important;
+    -o-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    -webkit-perspective: 1000 !important;
+    perspective: 1000 !important;
+  }
+
+  /* Prevent individual chat messages from having their own scroll */
+  .chat-message-list [data-chat-bubble] {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  /* Mobile chat bubble optimizations */
+  .chat-bubble-mobile {
+    max-width: 85% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    overflow: visible !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Force text content to wrap properly without creating scroll */
+  .chat-bubble-message-content {
+    overflow: visible !important;
+    max-height: none !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+/* Floating elements - connexi brand colors with clipping */
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(255,122,0,0.05), rgba(255,54,163,0.05), rgba(151,71,255,0.05), rgba(8,50,162,0.05));
+  z-index: 1;
+  /* Ensure elements are clipped by their container */
+  clip-path: inset(0);
+  max-width: calc(100vw - 40px); /* Prevent overflow beyond viewport */
+}
+
+/* Indicator dots */
+.indicator-dot {
+  transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+  background: linear-gradient(90deg, #FF7A00, #FF36A3);
+}
+
+/* Transparent blocks with gradient border */
+.case-transparent-block {
+  opacity: 0.8;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Case card with gradient border */
+.case-card {
+  position: relative;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.case-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(90deg, #FF7A00, #FF36A3, #9747FF, #0832A2, #FF7A00);
+  background-size: 400% 400%;
+  animation: border-animation 8s ease infinite;
+  border-radius: 14px;
+  z-index: -1;
+}
+
+.case-card::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 11px;
+  z-index: -1;
+}
+
+/* New white card style with thicker gradient border */
+.case-card-white {
+  position: relative;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.case-card-white::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: linear-gradient(90deg, #FF7A00, #FF36A3, #9747FF, #0832A2, #FF7A00);
+  background-size: 400% 400%;
+  animation: border-animation 8s ease infinite;
+  border-radius: 16px;
+  z-index: -1;
+  opacity: 0.2; /* Make border 20% transparent */
+}
+
+.case-card-white::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: white;
+  opacity: 1;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+/* Services section styles */
+.services-item {
+  border-left: 4px solid var(--connexi-orange);
+  transition: all 0.3s ease;
+}
+
+.services-item:hover {
+  transform: translateX(5px);
+}
+
+.services-item-number {
+  color: #ccc;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Fade transition for service items */
+.fade-transition {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes border-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Additional animations */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile chat input optimizations */
+.chat-input-container {
+  /* Ensure input area is always accessible on mobile */
+  position: relative;
+  z-index: 10;
+}
+
+/* Improved placeholder visibility */
+.chat-input-container textarea::placeholder {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.chat-input-container textarea:focus::placeholder {
+  opacity: 0.4;
+}
+
+/* Better visual feedback for interactive areas */
+.chat-clickable-area {
+  cursor: text;
+  transition: background-color 0.2s ease;
+}
+
+.chat-clickable-area:active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Loading state improvements */
+.chat-input-loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Connection status visual improvements */
+.chat-connection-indicator {
+  animation: pulse-subtle 2s infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+/* Critical input stability styles - highest priority */
+.chat-input-container,
+.chat-input-container textarea,
+textarea[name="message"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Force input field to always be accessible */
+.chat-input-container textarea {
+  min-height: 44px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+}
+
+/* Prevent any CSS that could hide the input */
+.chat-input-container textarea:not(:focus):not(:hover) {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Recovery styles for when input gets lost */
+.chat-input-container.chat-input-recovery textarea,
+textarea[data-recovery="true"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  position: static !important;
+  z-index: 999 !important;
+  background: rgba(31, 41, 55, 1) !important;
+  border: 1px solid #4B5563 !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  color: white !important;
+  min-height: 48px !important;
+}
+
+/* Mobile stability enhancements */
+@media (max-width: 768px) {
+  .chat-input-container {
+    /* Prevent container from collapsing */
+    min-height: 60px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .chat-input-container textarea {
+    /* Force mobile optimizations */
+    font-size: 16px !important; /* Prevent zoom on iOS */
+    min-height: 48px !important;
+    touch-action: manipulation !important;
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+
+  /* iOS specific fixes */
+  .chat-input-container textarea:focus {
+    /* Prevent iOS from hiding the input */
+    transform: translateZ(0) !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+}
+
+/* Android specific fixes */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  .chat-input-container textarea {
+    /* Android Chrome fixes */
+    position: relative !important;
+    z-index: 1 !important;
+    outline: none !important;
+  }
+}
+
+/* Webkit specific fixes for Safari */
+@supports (-webkit-touch-callout: none) {
+  .chat-input-container textarea {
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+}
+
+/* Force visibility on focus */
+.chat-input-container:focus-within,
+.chat-input-container:focus-within textarea {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+}
+
+/* Fallback for when everything fails */
+@media (max-width: 768px) {
+  body:has(.chat-container.translate-x-0) .chat-input-container {
+    position: fixed !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    background: rgba(17, 24, 39, 0.95) !important;
+    padding: 16px !important;
+    z-index: 1000 !important;
+    backdrop-filter: blur(10px) !important;
+  }
+}
+
+/* Critical animation overrides */
+.chat-input-container,
+.chat-input-container * {
+  animation-fill-mode: none !important;
+  transition: none !important;
+}
+
+.chat-input-container textarea {
+  animation: none !important;
+  transition: height 0.1s ease !important;
+}
+
+/* Force layout stability */
+.chat-input-container {
+  contain: layout style !important;
+  isolation: isolate !important;
+}
+
+/* Prevent any transforms that could move input offscreen */
+.chat-input-container,
+.chat-input-container textarea {
+  transform: none !important;
+  translate: none !important;
+  rotate: none !important;
+  scale: none !important;
+}
+
+/* Emergency visibility reset */
+.chat-input-force-visible,
+.chat-input-force-visible textarea {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  clip: auto !important;
+  clip-path: none !important;
+  overflow: visible !important;
+  z-index: 999 !important;
+  pointer-events: auto !important;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+/* ... existing styles continue ... */
